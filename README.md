@@ -26,6 +26,6 @@
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
 | title      | references | null: false                    |
-| catch_copy | text       | null: false, foreign_key: true |
+| catch_copy | text       | null: false,                   |
 | concept    | text       | null: false                    |
 | user       | references | null: false, foreign_key: true |
