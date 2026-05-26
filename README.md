@@ -17,11 +17,11 @@
 | Column    | Type      | Options                        |
 | ------    | ------    | -----------                    |
 | content   | text      | null: false                    |
-| phototype | reference | null: false, foreign_key: true |
+| prototype | reference | null: false, foreign_key: true |
 | user      | reference | null: false, foreign_key: true |
 
 
-## phototypes テーブル
+## prototypes テーブル
 
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
