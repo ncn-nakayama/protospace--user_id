@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:edit, :show]
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_prototype, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @prototypes = Prototype.all
@@ -20,8 +21,7 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    prototype = Prototype.find(params[:id])
-    prototype.destroy
+    @prototype.destroy
     redirect_to root_path
   end
 
@@ -29,8 +29,7 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    prototype = Prototype.find(params[:id])
-    prototype.update(prototype_params)
+    @prototype.update(prototype_params)
     redirect_to root_path
   end
 

@@ -4,7 +4,7 @@ class Prototype < ApplicationRecord
   validates :concept   , presence: true
   validates :image     , presence: true
 
-  validates :content, presence: true, unless: :was_attached?
+  validates :concept, presence: true, unless: :was_attached?
 
   def was_attached?
     self.image.attached?
