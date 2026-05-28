@@ -26,11 +26,15 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
-    @prototype.update(prototype_params)
-    redirect_to root_path
+    if @prototype.update(prototype_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def show
